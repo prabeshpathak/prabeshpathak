@@ -1,0 +1,62 @@
+﻿#view-work {
+  position: relative;
+  box-shadow: 5px 5px 23px #ff4d5a;
+  outline: none;
+  padding: 10px 50px;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+
+}
+#view-work:before,
+#view-work:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ff4d5a;
+  filter: blur(0);
+  z-index: -1;
+}
+#view-work:hover:before,
+#view-work:hover:after {
+  border-color: transparent;
+  filter: blur(2px);
+  transform: scale(2);
+  transition: 1000ms transform ease, 2100ms blur ease, 900ms border-color ease;
+}
+#view-work:hover:after {
+  transition-delay: 150ms;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#intro {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+#intro2 {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
